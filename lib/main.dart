@@ -25,10 +25,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text(
-          "${BlocProvider.of<CounterCubit>(context, listen: true).state.counter}",
-          style: const TextStyle(fontSize: 50),
+      body: BlocBuilder<CounterCubit, CounterState>(
+        builder: (context, state) => Center(
+          child: Text(
+            "${state.counter}",
+            style: const TextStyle(fontSize: 50),
+          ),
         ),
       ),
       floatingActionButton:
