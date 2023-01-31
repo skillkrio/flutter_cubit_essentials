@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Text(
-          "${BlocProvider.of<CounterCubit>(context).state.counter}",
+          "${BlocProvider.of<CounterCubit>(context, listen: true).state.counter}",
           style: const TextStyle(fontSize: 50),
         ),
       ),
