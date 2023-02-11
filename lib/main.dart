@@ -58,7 +58,7 @@ class HomePage extends StatelessWidget {
           Row(mainAxisAlignment: MainAxisAlignment.end, children: [
         FloatingActionButton(
           onPressed: () {
-            BlocProvider.of<CounterCubit>(context).increment();
+            context.read<CounterCubit>().increment();
           },
           heroTag: "increment",
           child: const Icon(Icons.add),
@@ -68,7 +68,7 @@ class HomePage extends StatelessWidget {
         ),
         FloatingActionButton(
           onPressed: () {
-            BlocProvider.of<CounterCubit>(context).decrement();
+            context.read<CounterCubit>().decrement();
           },
           heroTag: "decrement",
           child: const Icon(Icons.remove),
