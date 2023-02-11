@@ -23,7 +23,6 @@ class WidgetApp extends StatelessWidget {
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,9 +46,6 @@ class HomePage extends StatelessWidget {
           }
         },
         builder: (context, state) => BlocBuilder<CounterCubit, CounterState>(
-          buildWhen: (previous, current) {
-            return false;
-          },
           builder: (context, state) => Center(
             child: Text(
               "${state.counter}",
